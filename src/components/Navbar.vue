@@ -1,16 +1,16 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container-fluid">
       <!-- Sidebar Toggle Button (only mobile) -->
       <button
-        class="btn btn-outline-light d-lg-none me-2"
+        class="btn btn-outline-dark d-lg-none me-2"
         @click="$emit('toggle-sidebar')"
       >
         <i class="bi bi-list"></i>
       </button>
 
       <!-- Logo -->
-      <a class="navbar-brand fw-bold" href="#">Logo</a>
+      <a class="navbar-brand fw-bold text-dark" href="#">Logo</a>
 
       <!-- Navbar Collapse for links (optional links in future) -->
       <button
@@ -38,7 +38,7 @@
           <!-- Profile Dropdown -->
           <div class="dropdown">
             <a
-              class="nav-link dropdown-toggle text-white"
+              class="nav-link dropdown-toggle text-dark"
               href="#"
               role="button"
               id="profileDropdown"
