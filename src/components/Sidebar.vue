@@ -1,6 +1,5 @@
-<!-- Sidebar.vue -->
 <template>
-  <div class="sidebar bg-white shadow-sm">
+  <div :class="['sidebar bg-white shadow-sm', { active: isActive }]">
     <div class="sidebar-header p-3 border-bottom">
       <h4 class="mb-0 fw-bold text-primary">Super Admin</h4>
     </div>
@@ -12,9 +11,9 @@
           </a>
         </li>
         <li class="nav-item mb-2">
-            <a href="#" class="nav-link text-dark d-flex align-items-center">
-                <i class="bi bi-people me-2"></i>Users
-            </a>
+          <a href="#" class="nav-link text-dark d-flex align-items-center">
+            <i class="bi bi-people me-2"></i>Users
+          </a>
         </li>
         <li class="nav-item mb-2">
           <a href="#" class="nav-link text-dark d-flex align-items-center">
@@ -40,39 +39,33 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'Sidebar',
+  props: {
+    isActive: Boolean
+  },
+  emits: ['close-sidebar']
 });
 </script>
 
 <style scoped>
 .sidebar {
   width: 250px;
-  min-height: 100vh;
-  transition: all 0.3s ease;
-  z-index: 1000;
-}
-
-.nav-link {
-  border-radius: 0.375rem;
-  transition: all 0.2s ease;
-}
-
-.nav-link:hover {
-  background-color: rgba(13, 110, 253, 0.1);
-}
-
-.nav-link.active {
-  font-weight: 500;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 101;
+  transition: transform 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
 @media (max-width: 992px) {
   .sidebar {
-    position: fixed;
-    left: -250px;
+    transform: translateX(-100%);
   }
   
   .sidebar.active {
-    left: 0;
+    transform: translateX(0);
   }
 }
 </style>

@@ -1,7 +1,18 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
     <div class="container-fluid">
+      <!-- Sidebar Toggle Button (only mobile) -->
+      <button
+        class="btn btn-outline-light d-lg-none me-2"
+        @click="$emit('toggle-sidebar')"
+      >
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Logo -->
       <a class="navbar-brand fw-bold" href="#">Logo</a>
+
+      <!-- Navbar Collapse for links (optional links in future) -->
       <button
         class="navbar-toggler"
         type="button"
@@ -10,6 +21,7 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="d-flex ms-auto align-items-center">
           <!-- Search Bar -->
@@ -52,12 +64,12 @@ import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "Navbar",
+  emits: ['toggle-sidebar'],
   setup() {
     const searchQuery = ref("");
 
     const onSearch = () => {
       console.log("Searching for:", searchQuery.value);
-      // Nanti bisa emit event ke parent kalau mau
     };
 
     return {
