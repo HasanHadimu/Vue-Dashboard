@@ -6,4 +6,5 @@ Learn more about the recommended Project Setup and IDE Support in the [Vue Docs 
 
 
 #Screenshoot
-![image](https://github.com/user-attachments/assets/02da056c-6e91-4b88-9f43-9fb9cc8c602d)
+![image](https://github.com/user-attachments/assets/3213c572-89e9-4ccc-89ac-adb502dfd036)
+
